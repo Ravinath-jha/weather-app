@@ -36,13 +36,13 @@ function displayData (response) {
         date.innerText = dateFunction(today);
 
         const temp = document.querySelector(".temp");
-        temp.innerHTML = `Temp: ${Math.round(response.main.temp)} <span>°C</span>`;
+        temp.innerHTML = `Temp: ${Math.round(response.main.temp-273.15)} <span>°C</span>`;
 
         const weather = document.querySelector(".weather");
         weather.innerText = `Weather: ${response.weather[0].main}`;
 
         const tempRange = document.querySelector(".temp-range");
-        tempRange.innerText = `Temp Range: ${Math.round(response.main.temp_min)}°C / ${Math.round(response.main.temp_max)}°C`;
+        tempRange.innerText = `Temp Range: ${Math.round(response.main.temp_min-273.15)}°C / ${Math.round(response.main.temp_max-273.15)}°C`;
 
         const weatherIcon = document.querySelector(".weather-icon");
         const iconURL = "http://openweathermap.org/img/w/";
